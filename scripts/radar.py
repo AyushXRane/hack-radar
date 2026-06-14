@@ -13,4 +13,15 @@ Usage:
  
 Reads hackathon.config.json from the current directory.
 """
+
+import sys
+import json
+import re
+import subprocess
+from pathlib import Path
+from datetime import datetime, timezone
  
+import requests
+from bs4 import BeautifulSoup
+ 
+CONFIG_PATH = Path("hackathon.config.json")
