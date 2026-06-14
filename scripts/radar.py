@@ -316,4 +316,26 @@ def cmd_report(config):
         fn(config)
         print()
  
+ COMMANDS = {
+    "velocity": cmd_velocity,
+    "api-check": cmd_api_check,
+    "pivot": cmd_pivot,
+    "competitors": cmd_competitors,
+    "rubric": cmd_rubric,
+    "submission": cmd_submission,
+    "demo-prep": cmd_demo_prep,
+    "report": cmd_report,
+}
  
+ 
+def main():
+    if len(sys.argv) < 2 or sys.argv[1] not in COMMANDS:
+        print(f"Usage: python radar.py [{'|'.join(COMMANDS.keys())}]")
+        sys.exit(1)
+ 
+    config = load_config()
+    COMMANDS[sys.argv[1]](config)
+ 
+ 
+if __name__ == "__main__":
+    main()
