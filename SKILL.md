@@ -41,3 +41,18 @@ python scripts/radar.py report
 **rubric**: scrapes the judging criteria from the hackathon's rules page. Score the project idea against each criterion from 1-10 and flag anything below 6, with a suggestion for how to address it.  
 **submission**: only run when hackathon_end_time is within two hours. Checks the team's Devpost submission for a filled-out description, tech stack, "how it was built," challenges, and sponsor API mentions.
 **demo-prep**: reads the repo's README, file structure, recently changed source files, and commit history, then drafts a short demo script (what to show, in what order, what to say) and a slide outline (problem, solution, demo, tech stack, impact). Base the script on what the code actually does, not just the commit messages.
+
+## Examples
+- "How am I doing?" → `report`  
+- "Any competitors in my track?" → `competitors`  
+- "Is my README ready, am I drifting from the idea?" → `pivot`  
+- "Help me prep my demo / pitch" → `demo-prep`  
+- "Am I ready to submit?" → `submission` *(only in the final two hours)*
+
+## Guidelines
+- Summarize results conversationally rather than dumping raw script output.  
+- For `competitors`, `rubric`, and `pivot`, the script returns raw data for you to interpret, not a final verdict.  
+- If the user says their idea, tech stack, or sponsor APIs have changed, update only those fields in `hackathon.config.json`.  
+
+
+
